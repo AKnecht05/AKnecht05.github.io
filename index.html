@@ -18,6 +18,7 @@
         <li><a href="memorabilia.html">Memorabilia</a></li>
       </ul>
     </nav>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
   </header>
 
   <main>
@@ -45,5 +46,13 @@
   <footer>
     <p>Information gathered from StarWars.com.</p>
   </footer>
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+  
 </body>
 </html>

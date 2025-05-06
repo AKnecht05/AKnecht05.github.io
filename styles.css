@@ -110,26 +110,29 @@ body, h1, h2, p, ul {
 
   .character-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
   }
-
+  
   .character-card {
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
+    height: 300px; /* uniform height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
   }
-
+  
   .character-card img {
+    max-height: 220px; /* consistent image area */
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
+    object-fit: cover; /* ensures the image fills the area nicely */
   }
-
+  
   .character-card p {
-    margin-top: 8px;
+    margin: 10px 0 0;
     font-weight: bold;
   }
 
@@ -211,3 +214,35 @@ body, h1, h2, p, ul {
     font-size: 0.9rem;
     color: #666;
   }
+
+  /* Button styling */
+#darkModeToggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .character-card {
+  background-color: #1f1f1f;
+  border-color: #444;
+}
+
+body.dark-mode nav a {
+  color: #ddd;
+}
